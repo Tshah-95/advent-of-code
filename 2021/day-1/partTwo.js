@@ -1,22 +1,27 @@
-const { data } = require('./data')
+let { data } = require('./data')
 
 let main = async () => {
     let increasing = 0
 
-    console.log(JSON.stringify(data))
+    let prevSum = data[ 0 ] + data[ 1 ] + data[ 2 ]
 
-    // for each value that isn't the initial, compare it to the previous value.
-    // if found to be greater, increment the total value of increasing by 1
-    data.forEach((x, i) => {
+    for (let i = 3; i < data.length; i++) {
+        let currVal = data[ i ]
+        let currentSum = prevSum - data[ i - 3 ] + currVal
+
         console.log({
-            prev: i > 0 ? data[ i - 1 ] : 'N/A',
-            curr: x,
-            increasing: x > data[ i - 1 ]
+            prevSum,
+            currentSum,
+            increasing: currentSum > prevSum
         })
-        if (i > 0 && x > data[ i - 1 ]) {
+
+        if (i > 3 && currentSum > prevSum) {
             increasing++
         }
-    })
+
+
+        prevSum = currentSum
+    }
 
     console.log(increasing)
 }
