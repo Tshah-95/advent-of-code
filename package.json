@@ -1,0 +1,22 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "My advent of code solutions",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tshah-95/advent-of-code.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tshah-95/advent-of-code/issues"
+  },
+  "homepage": "https://github.com/Tshah-95/advent-of-code#readme",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
